@@ -1,32 +1,38 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<RootNamespace>OrchardCoreContrib.Navigation</RootNamespace>
-		<VersionPrefix>1.4.0</VersionPrefix>
-		<Authors>The Orchard Core Contrib Team</Authors>
-		<Company />
-		<Description>Provides an abstractions APIs for Navigation.</Description>
-		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/OrchardCoreContrib/OrchardCoreContrib/tree/main/src/OrchardCoreContrib.Navigation.Abstractions/README.md</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/OrchardCoreContrib/OrchardCoreContrib</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-		<PublishRepositoryUrl>true</PublishRepositoryUrl>
-		<PackageTags>Orchard Core, Orchard Core Contrib, Navigation</PackageTags>
-		<PackageReleaseNotes>https://github.com/OrchardCoreContrib/OrchardCoreContrib/releases</PackageReleaseNotes>
-		<PackageId>OrchardCoreContrib.Navigation.Abstractions</PackageId>
-		<PackageIcon>icon.png</PackageIcon>
-		<Product>Orchard Core Contrib Navigation Abstractions</Product>
-		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-		<Copyright>2019 Orchard Core Contrib</Copyright>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
 
-	<ItemGroup>
-		<None Include="../../images/icon.png" Pack="true" PackagePath="icon.png" />
-	</ItemGroup>
+    <RootNamespace>OrchardCoreContrib.Navigation</RootNamespace>
+    <VersionPrefix>1.4.0</VersionPrefix>
+    <Authors>The Orchard Core Contrib Team</Authors>
+    <Company />
+    <Description>Provides an abstractions APIs for Navigation.</Description>
+    <PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/OrchardCoreContrib/OrchardCoreContrib/tree/main/src/OrchardCoreContrib.Navigation.Abstractions/README.md</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/OrchardCoreContrib/OrchardCoreContrib</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageTags>Orchard Core, Orchard Core Contrib, Navigation</PackageTags>
+    <PackageReleaseNotes>https://github.com/OrchardCoreContrib/OrchardCoreContrib/releases</PackageReleaseNotes>
+    <PackageId>OrchardCoreContrib.Navigation.Abstractions</PackageId>
+    <PackageIcon>icon.png</PackageIcon>
+    <Product>Orchard Core Contrib Navigation Abstractions</Product>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Copyright>2019 Orchard Core Contrib</Copyright>
+  </PropertyGroup>
 
-	<ItemGroup>
+  <ItemGroup>
+    <None Include="../../images/icon.png" Pack="true" PackagePath="icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\GuangCore\GuangCore.TopRef\GuangCore.TopRef.csproj" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
 		<PackageReference Include="OrchardCore.Infrastructure.Abstractions" />
 		<PackageReference Include="OrchardCore.Navigation.Core" />
-	</ItemGroup>
+	</ItemGroup>-->
 
 </Project>
