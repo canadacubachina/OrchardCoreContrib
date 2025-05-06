@@ -27,7 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\src\GuangCore\GuangCore.TopRef\GuangCore.TopRef.csproj" />
+    <ProjectReference Include="..\OrchardCoreContrib.Abstractions\OrchardCoreContrib.Abstractions.csproj" />
   </ItemGroup>
 
   <!--<ItemGroup>

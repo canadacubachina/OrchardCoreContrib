@@ -25,7 +25,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="OrchardCore.ContentLocalization.Abstractions" />
+	  <ProjectReference Include="..\OrchardCoreContrib.Abstractions\OrchardCoreContrib.Abstractions.csproj" />
 	</ItemGroup>
+
+	<!--<ItemGroup>
+		<PackageReference Include="OrchardCore.ContentLocalization.Abstractions" />
+	</ItemGroup>-->
 
 </Project>
