@@ -1,8 +1,9 @@
-﻿using OrchardCoreContrib.Infrastructure;
+using Microsoft.Extensions.DependencyInjection;
+using OrchardCoreContrib.Infrastructure;
 using OrchardCoreContrib.Localization.Data;
 using OrchardCoreContrib.Localization.Diacritics;
 
-namespace Microsoft.Extensions.DependencyInjection;
+namespace OrchardCoreContrib.Localization.Extensions;
 
 /// <summary>
 /// Represents an extension methods for <see cref="IServiceCollection"/>.
@@ -13,7 +14,7 @@ public static class LocalizationServiceCollectionExtensions
     /// Registers the services to enable localization using data storage.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/>.</param>
-    public static IServiceCollection AddDataLocalization(this IServiceCollection services)
+    public static IServiceCollection AddOrchardCoreContribDataLocalization(this IServiceCollection services)
     {
         Guard.ArgumentNotNull(services, nameof(services));
 
