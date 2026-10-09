@@ -17,8 +17,7 @@ namespace OrchardCoreContrib.Localization.Json;
 /// <param name="logger">The <see cref="ILogger"/>.</param>
 public class JsonStringLocalizer(
     ILocalizationManager localizationManager,
-    bool fallBackToParentCulture,
-    ILogger logger) : IStringLocalizer
+    bool fallBackToParentCulture) : IStringLocalizer
 {
 
     /// <inheritdocs />
@@ -26,7 +25,7 @@ public class JsonStringLocalizer(
     {
         get
         {
-            Guard.ArgumentNotNull(name, nameof(name));
+            Guard.ArgumentNotNull(name);
 
             var translation = GetTranslation(name, CultureInfo.CurrentUICulture);
 

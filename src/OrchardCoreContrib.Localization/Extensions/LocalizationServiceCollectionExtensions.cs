@@ -16,7 +16,7 @@ public static class LocalizationServiceCollectionExtensions
     /// <param name="services">The <see cref="IServiceCollection"/>.</param>
     public static IServiceCollection AddOrchardCoreContribDataLocalization(this IServiceCollection services)
     {
-        Guard.ArgumentNotNull(services, nameof(services));
+        Guard.ArgumentNotNull(services);
 
         services.AddSingleton<IDataTranslationProvider, NullDataTranslationProvider>();
         services.AddTransient<DataResourceManager>();
@@ -37,7 +37,7 @@ public static class LocalizationServiceCollectionExtensions
     /// <param name="services">The <see cref="IServiceCollection"/>.</param>
     public static IServiceCollection AddDiacritics(this IServiceCollection services)
     {
-        Guard.ArgumentNotNull(services, nameof(services));
+        Guard.ArgumentNotNull(services);
 
         services.AddSingleton<IDiacriticsLookup, DiacriticsLookup>();
 

@@ -13,19 +13,16 @@ public class ShortcodeAttributes : IList<ShortcodeAttribute>
     /// <summary>
     /// Creates a new instance of <see cref="ShortcodeAttributes"/>.
     /// </summary>
-    public ShortcodeAttributes()
-    {
-        _shortcodeAttributes = [];
-    }
+    public ShortcodeAttributes() => _shortcodeAttributes = [];
 
     /// <summary>
     /// Creates a new instance of <see cref="ShortcodeAttributes"/>.
     /// </summary>
     public ShortcodeAttributes(IEnumerable<ShortcodeAttribute> attributes)
     {
-        Guard.ArgumentNotNull(attributes, nameof(attributes));
+        Guard.ArgumentNotNull(attributes);
 
-        _shortcodeAttributes = new List<ShortcodeAttribute>(attributes);
+        _shortcodeAttributes = [.. attributes];
     }
 
     /// <summary>
@@ -33,7 +30,7 @@ public class ShortcodeAttributes : IList<ShortcodeAttribute>
     /// </summary>
     public ShortcodeAttributes(IEnumerable<KeyValuePair<string, string>> attributes)
     {
-        Guard.ArgumentNotNull(attributes, nameof(attributes));
+        Guard.ArgumentNotNull(attributes);
 
         _shortcodeAttributes = [];
 
@@ -68,16 +65,10 @@ public class ShortcodeAttributes : IList<ShortcodeAttribute>
     }
 
     /// <inheritdoc />
-    public void Add(ShortcodeAttribute item)
-    {
-        _shortcodeAttributes.Add(item);
-    }
+    public void Add(ShortcodeAttribute item) => _shortcodeAttributes.Add(item);
 
     /// <inheritdoc />
-    public void Clear()
-    {
-        _shortcodeAttributes.Clear();
-    }
+    public void Clear() => _shortcodeAttributes.Clear();
 
     /// <summary>
     /// Checks whether the attribute with the given name is exist.
@@ -113,18 +104,12 @@ public class ShortcodeAttributes : IList<ShortcodeAttribute>
     public int IndexOf(ShortcodeAttribute item) => _shortcodeAttributes.IndexOf(item);
 
     /// <inheritdoc />
-    public void Insert(int index, ShortcodeAttribute item)
-    {
-        _shortcodeAttributes.Insert(index, item);
-    }
+    public void Insert(int index, ShortcodeAttribute item) => _shortcodeAttributes.Insert(index, item);
 
     /// <inheritdoc />
     public bool Remove(ShortcodeAttribute item) => _shortcodeAttributes.Remove(item);
 
-    public void RemoveAt(int index)
-    {
-        _shortcodeAttributes.RemoveAt(index);
-    }
+    public void RemoveAt(int index) => _shortcodeAttributes.RemoveAt(index);
 
     /// <inheritdoc />
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
@@ -146,7 +131,7 @@ public class ShortcodeAttributes : IList<ShortcodeAttribute>
     /// <param name="attribute">The <see cref="ShortcodeAttribute"/> to be set.</param>
     public void Set(ShortcodeAttribute attribute)
     {
-        Guard.ArgumentNotNull(attribute, nameof(attribute));
+        Guard.ArgumentNotNull(attribute);
 
         var index = IndexOf(attribute);
         if (index > -1)

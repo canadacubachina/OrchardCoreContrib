@@ -1,7 +1,7 @@
 using Microsoft.OpenApi;
 //using Microsoft.OpenApi.Models;
 
-namespace OrchardCoreContrib.OpenApi.Abstractions;
+namespace OrchardCoreContrib.OpenApi;
 
 /// <summary>
 /// Represents a base class for OpenAPI definition.

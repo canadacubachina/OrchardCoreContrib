@@ -1,0 +1,69 @@
+﻿using System.Runtime.CompilerServices;
+
+namespace OrchardCoreContrib.Infrastructure;
+
+/// <summary>
+/// Represents an argument checker.
+/// </summary>
+public static partial class Guard
+{
+    /// <summary>
+    /// Ensures that the specified value is <see langword="false"/>.
+    /// </summary>
+    /// <param name="value">The boolean value to be tested.</param>
+    /// <param name="name">An optional name of the tested value.</param>
+    /// <exception cref="ArgumentException">Thrown if the value is <see langword="true"/>.</exception>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void ArgumentIsFalse(bool value, [CallerArgumentExpression(nameof(value))] string name = null)
+    {
+        if (value)
+        {
+            throw new ArgumentException("Value must be false.", name);
+        }
+    }
+
+    /// <summary>
+    /// Ensures that the specified value is <see langword="false"/>.
+    /// </summary>
+    /// <param name="value">The boolean value to be tested.</param>
+    /// <param name="name">An optional name of the tested value.</param>
+    /// <exception cref="ArgumentException">Thrown if the value is <see langword="true"/> or <see langword="null"/>.</exception>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void ArgumentIsFalse(bool? value, [CallerArgumentExpression(nameof(value))] string name = null)
+    {
+        if (!value.HasValue || value.Value)
+        {
+            throw new ArgumentException("Value must be false.", name);
+        }
+    }
+
+    /// <summary>
+    /// Ensures that the specified value is <see langword="true"/>.
+    /// </summary>
+    /// <param name="value">The boolean value to be tested.</param>
+    /// <param name="name">An optional name of the tested value.</param>
+    /// <exception cref="ArgumentException">Thrown if the value is <see langword="false"/>.</exception>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void ArgumentIsTrue(bool value, [CallerArgumentExpression(nameof(value))] string name = null)
+    {
+        if (!value)
+        {
+            throw new ArgumentException("Value must be true.", name);
+        }
+    }
+
+    /// <summary>
+    /// Ensures that the specified value is <see langword="true"/>.
+    /// </summary>
+    /// <param name="value">The boolean value to be tested.</param>
+    /// <param name="name">An optional name of the tested value.</param>
+    /// <exception cref="ArgumentException">Thrown if the value is <see langword="false"/> or <see langword="null"/>.</exception>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void ArgumentIsTrue(bool? value, [CallerArgumentExpression(nameof(value))] string name = null)
+    {
+        if (!value.HasValue || !value.Value)
+        {
+            throw new ArgumentException("Value must be true.", name);
+        }
+    }
+}

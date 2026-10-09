@@ -1,11 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<RootNamespace>OrchardCoreContrib.Email</RootNamespace>
-		<VersionPrefix>1.5.0</VersionPrefix>
+		<VersionPrefix>1.6.0</VersionPrefix>
 		<Authors>The Orchard Core Contrib Team</Authors>
 		<Company />
 		<Description>Provides an abstractions APIs for Email.</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/OrchardCoreContrib/OrchardCoreContrib/tree/main/src/OrchardCoreContrib.Email.Abstractions/README.md</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/OrchardCoreContrib/OrchardCoreContrib</RepositoryUrl>
@@ -22,10 +23,16 @@
 
 	<ItemGroup>
 		<None Include="../../images/icon.png" Pack="true" PackagePath="icon.png" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="OrchardCore.Email.Abstractions" />
+		<PackageReference Include="OrchardCore.Infrastructure.Abstractions" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\OrchardCoreContrib.Infrastructure.Abstractions\OrchardCoreContrib.Infrastructure.Abstractions.csproj" />
 	</ItemGroup>
 
 </Project>

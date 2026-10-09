@@ -1,20 +1,26 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using OrchardCore.Logging;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseNLogHost();
+
+builder.Services
+    .AddOrchardCms()
+    .AddOrchardCoreContrib()
+    .AddSetupFeatures("OrchardCore.AutoSetup");
+
+var app = builder.Build();
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+}
+
+app.UseOrchardCore();
+
+await app.RunAsync();
 
 namespace OrchardCoreContrib.Web
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
+    public partial class Program;
 }

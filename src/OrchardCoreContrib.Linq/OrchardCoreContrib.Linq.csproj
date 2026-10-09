@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<VersionPrefix>1.4.0</VersionPrefix>
+		<VersionPrefix>1.5.0</VersionPrefix>
 		<Authors>The Orchard Core Contrib Team</Authors>
 		<Company />
 		<Description>Provides ability to query using LINQ in Orchard Core data source.</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/OrchardCoreContrib/OrchardCoreContrib/tree/main/src/OrchardCoreContrib.Linq/README.md</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/OrchardCoreContrib/OrchardCoreContrib</RepositoryUrl>
@@ -21,9 +22,11 @@
 
 	<ItemGroup>
 		<None Include="../../images/icon.png" Pack="true" PackagePath="icon.png" />
+		<None Include="README.md" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AngleSharp" />
 		<PackageReference Include="OrchardCore.Autoroute" />
 		<PackageReference Include="OrchardCore.Alias" />
 		<PackageReference Include="OrchardCore.Users.Core" />
@@ -38,7 +41,13 @@
 		<PackageReference Include="OrchardCore.OpenId.Core" />
 		<PackageReference Include="OrchardCore.ContentManagement" />
 		<PackageReference Include="OrchardCore.ContentLocalization.Abstractions" />
+		<PackageReference Include="OrchardCore.Notifications.Core" />
+		<PackageReference Include="OrchardCore.ArchiveLater" />
 		<PackageReference Include="linq2db" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\OrchardCoreContrib.Infrastructure.Abstractions\OrchardCoreContrib.Infrastructure.Abstractions.csproj" />
 	</ItemGroup>
 
 </Project>
