@@ -26,9 +26,12 @@
 		<None Include="README.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
-	<ItemGroup>
+	<!-- <ItemGroup>
 		<PackageReference Include="OrchardCore.Infrastructure.Abstractions" />
 		<PackageReference Include="OrchardCore.Navigation.Core" />
+	</ItemGroup> -->
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\..\src\GuangCore\GuangCore.TopRef\GuangCore.TopRef.csproj" />
 	</ItemGroup>
-
 </Project>

@@ -26,8 +26,11 @@
 		<None Include="README.md" Pack="true" PackagePath="\"/>
 	</ItemGroup>
 
-	<ItemGroup>
+	<!-- <ItemGroup>
 		<PackageReference Include="OrchardCore.ContentLocalization.Abstractions" />
-	</ItemGroup>
+	</ItemGroup> -->
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\..\src\GuangCore\GuangCore.TopRef\GuangCore.TopRef.csproj" />
+	</ItemGroup>
 </Project>

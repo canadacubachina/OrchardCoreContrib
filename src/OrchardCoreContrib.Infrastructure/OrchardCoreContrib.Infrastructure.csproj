@@ -24,10 +24,10 @@
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
 
-	<ItemGroup>
+	<!-- <ItemGroup>
 		<PackageReference Include="OrchardCore.Abstractions" />
 		<PackageReference Include="OrchardCore.Infrastructure.Abstractions" />
-	</ItemGroup>
+	</ItemGroup> -->
 
 	<ItemGroup>
 		<ProjectReference Include="..\OrchardCoreContrib.Infrastructure.Abstractions\OrchardCoreContrib.Infrastructure.Abstractions.csproj" />
